@@ -1,0 +1,44 @@
+# Compiled binaries
+*_asm
+*_c
+stack_hello
+stack_hello_simple
+stack_frames
+fibonacci
+stack_overflow
+stack_vs_queue
+
+# Object files
+*.o
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# RISC-V compiled
+riscv/*.o
+riscv/stack_hello
+riscv/stack_hello_simple
+riscv/fibonacci
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+*.exe
+*.out
+*.app
