@@ -114,28 +114,44 @@ ret
 ## Building RISC-V Programs
 
 ### Prerequisites
+
+**RISC-V requires either real hardware or CPU emulation.** Since most systems are x86-64, you'll need QEMU to emulate a RISC-V processor.
+
 ```bash
-# Install RISC-V GNU toolchain
+# Install RISC-V toolchain and QEMU emulator
 # On Fedora/RHEL:
-sudo dnf install riscv64-linux-gnu-gcc
+sudo dnf install qemu-user-static-riscv riscv64-linux-gnu-binutils riscv64-linux-gnu-gcc
 
 # On Ubuntu/Debian:
-sudo apt install gcc-riscv64-linux-gnu
+sudo apt install qemu-user-static gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu
 
-# Or use QEMU for emulation:
-sudo dnf install qemu-system-riscv
+# Verify installation:
+qemu-riscv64-static --version
+riscv64-linux-gnu-as --version
 ```
 
 ### Assembling
 ```bash
-riscv64-linux-gnu-as stack_hello.s -o stack_hello.o
-riscv64-linux-gnu-ld stack_hello.o -o stack_hello
+cd riscv/
+riscv64-linux-gnu-as stack_hello_simple.s -o stack_hello_simple.o
+riscv64-linux-gnu-ld stack_hello_simple.o -o stack_hello_simple
 ```
 
-### Running (requires RISC-V system or emulator)
+### Running with QEMU Emulation
 ```bash
-qemu-riscv64 ./stack_hello
+# QEMU translates RISC-V instructions to your native CPU on-the-fly
+qemu-riscv64-static ./stack_hello_simple
 ```
+
+**Note**: QEMU emulates the RISC-V CPU, registers, and syscalls. Programs run slower than native but are functionally identical to running on real RISC-V hardware.
+
+### Educational Value Without Running
+
+Even without QEMU, the **source code itself** is educational! Compare:
+- Instruction encoding (fixed 32-bit vs x86's 1-15 bytes)
+- Register naming (logical x0-x31 vs historical rax/rbx)
+- Stack operations (explicit vs implicit)
+- Calling conventions (cleaner than x86-64)
 
 ## Learning Value
 
