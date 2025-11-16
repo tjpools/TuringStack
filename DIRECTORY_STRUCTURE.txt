@@ -1,0 +1,128 @@
+TuringStack - Complete Directory Structure
+================================================================================
+Generated: November 16, 2025
+
+ROOT DIRECTORY (/)
+================================================================================
+Documentation:
+  README.md                  - Main documentation with epilogue (24 KB)
+  QUICKSTART.md              - Quick reference guide (4.7 KB)
+  SUMMARY.txt                - Project overview (4.6 KB)
+  LICENSE                    - MIT License
+  .gitignore                 - Git ignore rules
+  Makefile                   - Build system for C/Assembly (3.8 KB)
+
+C Programs (Source):
+  fibonacci.c                - Recursive vs iterative comparison
+  stack_frames.c             - Call stack visualization
+  stack_hello.c              - Stack push/pop with visualization
+  stack_hello_simple.c       - Simple buffer demonstration
+  stack_overflow.c           - Controlled stack limit test
+  stack_vs_queue.c           - LIFO vs FIFO comparison (7.6 KB)
+
+x86-64 Assembly (Source):
+  stack_hello.asm            - Optimized word-sized operations
+  stack_hello_byte.asm       - Byte-by-byte stack demonstration
+
+Compiled Binaries (x86-64):
+  fibonacci_c                - 21 KB
+  stack_frames_c             - 21 KB
+  stack_hello_c              - 21 KB
+  stack_hello_simple_c       - 20 KB
+  stack_overflow_c           - 21 KB
+  stack_vs_queue_c           - 23 KB
+  stack_hello_asm            - 8.8 KB
+  stack_hello_byte_asm       - 4.8 KB
+
+Build Artifacts:
+  stack_hello.o              - Object file
+  stack_hello_byte.o         - Object file
+
+PYTHON SUBDIRECTORY (/python/)
+================================================================================
+Programs:
+  stack_hello.py             - High-level stack operations (4.8 KB)
+  stack_frames.py            - Call stack introspection (5.4 KB)
+  fibonacci.py               - Multiple approaches with memoization (6.0 KB)
+  stack_vs_queue.py          - Collections and thread-safe queues (6.8 KB)
+  stack_overflow.py          - Recursion limits and trampoline (5.9 KB)
+
+Documentation & Scripts:
+  README.md                  - Python-specific guide (2.0 KB)
+  run_all.sh                 - Convenience script to run all demos
+
+RUST SUBDIRECTORY (/rust/)
+================================================================================
+Source Code:
+  stack_hello.rs             - Ownership and memory safety (6.4 KB)
+  fibonacci.rs               - Iterators and const functions (7.5 KB)
+  stack_vs_queue.rs          - Pattern matching and RPN calculator (8.3 KB)
+
+Compiled Binaries:
+  stack_hello                - 3.8 MB (includes stdlib + safety)
+  fibonacci                  - 3.9 MB
+  stack_vs_queue             - 3.9 MB
+
+Documentation & Scripts:
+  README.md                  - Rust ownership explained (3.3 KB)
+  build_and_run.sh           - Build and run script (2.4 KB)
+
+RISC-V SUBDIRECTORY (/riscv/)
+================================================================================
+Source Code:
+  stack_hello.s              - Full stack demo with loops (2.4 KB)
+  stack_hello_simple.s       - Character-by-character explicit (2.2 KB)
+  fibonacci.s                - Recursive calls with calling convention (2.5 KB)
+
+Compiled Binaries:
+  stack_hello                - 1.7 KB (smallest binary!)
+  stack_hello_simple         - 1.6 KB (absolute minimum!)
+
+Build Artifacts:
+  stack_hello.o              - Object file
+  stack_hello_simple.o       - Object file
+
+Documentation:
+  README.md                  - RISC vs CISC comparison (5.5 KB)
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+Total Files:           30 source files + documentation
+Total Compiled:        13 binaries (3 architectures/languages)
+Total Directory Size:  ~340 KB (excluding .git)
+
+By Language:
+  - C Programs:         6 source files → 6 binaries (20-23 KB each)
+  - x86-64 Assembly:    2 source files → 2 binaries (4.8-8.8 KB)
+  - Python:             5 scripts (interpreted, no binaries)
+  - Rust:               3 source files → 3 binaries (3.8-3.9 MB each)
+  - RISC-V Assembly:    3 source files → 2 binaries (1.6-1.7 KB)
+
+Binary Size Range:     1.6 KB (RISC-V) → 3.9 MB (Rust) = 2437x difference!
+
+Documentation:         5 README files, 1 LICENSE, 1 QUICKSTART, 1 SUMMARY
+
+================================================================================
+ABSTRACTION LADDER VISUALIZATION
+================================================================================
+
+Level 1 - Hardware (Assembly):
+  x86-64:  stack_hello_byte.asm → 4.8 KB binary
+  RISC-V:  stack_hello_simple.s → 1.6 KB binary ⚡ SMALLEST
+
+Level 2 - Systems (C):
+  stack_hello.c → 21 KB binary
+
+Level 3 - Modern Systems (Rust):
+  stack_hello.rs → 3.8 MB binary 🦀 SAFEST
+
+Level 4 - High-Level (Python):
+  stack_hello.py → Interpreted (no binary, ~80 MB runtime)
+
+Each level trades size/complexity for safety/productivity/abstraction!
+
+================================================================================
+END OF DIRECTORY STRUCTURE
+================================================================================
